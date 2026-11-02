@@ -1,0 +1,32 @@
+{
+  "parrot": {
+    "name": "Superb Parrot",
+    "nameEL": "Superb Parrot",
+    "category": "parrot",
+    "order": 1
+  },
+  "man-1": {
+    "name": "Alex",
+    "nameEL": "Αλέξης (Άνδρας 1)",
+    "category": "man",
+    "order": 2
+  },
+  "man-2": {
+    "name": "Nikos",
+    "nameEL": "Νίκος (Άνδρας 2)",
+    "category": "man",
+    "order": 3
+  },
+  "woman-1": {
+    "name": "Elena",
+    "nameEL": "Έλενα (Γυναίκα)",
+    "category": "woman",
+    "order": 4
+  },
+  "robot": {
+    "name": "Cyborg Bot",
+    "nameEL": "Cyber Robot",
+    "category": "robot",
+    "order": 5
+  }
+}
