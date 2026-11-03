@@ -1,15 +1,19 @@
 <script setup lang="ts">
 import { currentLanguage } from '../composables/useLanguage';
 import { agencyContent } from '../data/content';
+import InteractiveHeroGrid from './InteractiveHeroGrid.vue';
 
 const content = agencyContent;
 </script>
 
 <template>
-  <section class="relative pt-12 pb-24 md:pt-20 md:pb-32 overflow-hidden">
+  <section class="relative isolate pt-12 pb-24 md:pt-20 md:pb-32 overflow-hidden">
+    <!-- Interactive 40x40 3D Squares Background -->
+    <InteractiveHeroGrid :cell-size="40" :influence-radius="120" :max-depth="14" />
+
     <!-- Atmospheric Background Glows -->
-    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-emerald-500/15 blur-[120px] rounded-full pointer-events-none"></div>
-    <div class="absolute top-60 right-10 w-[400px] h-[300px] bg-sky-500/10 blur-[100px] rounded-full pointer-events-none"></div>
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-emerald-500/15 blur-[120px] rounded-full pointer-events-none z-0"></div>
+    <div class="absolute top-60 right-10 w-[400px] h-[300px] bg-sky-500/10 blur-[100px] rounded-full pointer-events-none z-0"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center max-w-3xl mx-auto">
@@ -50,6 +54,11 @@ const content = agencyContent;
             <span>{{ content[currentLanguage].hero.ctaSecondary }}</span>
             <span class="text-emerald-400 group-hover:translate-x-0.5 transition">→</span>
           </a>
+        </div>
+
+        <!-- 3D Element Anchor Container (Ready for Spline, Three.js or GLTF model) -->
+        <div id="hero-3d-scene" class="w-full max-w-2xl mx-auto empty:hidden my-6" aria-label="3D Hero Asset">
+          <slot name="hero-3d" />
         </div>
 
         <!-- Metrics Row -->
